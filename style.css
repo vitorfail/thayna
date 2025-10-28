@@ -170,11 +170,19 @@ body{
     width: auto;
     height: 100%;
 }
-.container-cards .avalicao{
-    width: 30%;
+.container-cards .avaliacao{
+    width: 10%;
 }
 .container-cards h1{
-    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 100;
+}
+.container-cards p{
+    text-align: center;
+    color: #d7d7d7;
+    padding-bottom: 80px;
 }
 @keyframes scroll {
     0% {
@@ -240,6 +248,7 @@ body{
     text-align: center;
     font-weight: 100;
     color: black;
+    font-size: 2.2rem;
 }
 .second .sub{
     font-size: 1.3rem;
@@ -305,14 +314,19 @@ body{
     width: 100%;
 }
 .container-cards{
+    padding-top: 90px;
     width: 100%;
-    height: 90vh;
-    overflow-x: hidden;
+    min-height: auto;
+    height: auto;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.container-cards strong{
+    font-weight: bold;
+    color: rgb(252, 122, 30);
 }
 .container-cards .center{
     display: flex;
@@ -326,8 +340,7 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-background: linear-gradient(to right, #4e54c8, #8f94fb);
-}
+background: linear-gradient(to right, #151746, #262852);}
 @media screen and (max-width: 768px) {
     .center{
         width: 90%;
@@ -389,5 +402,12 @@ background: linear-gradient(to right, #4e54c8, #8f94fb);
     .second .sub{
         width: 100%;
         font-size: 100%;
+    }
+    .container-cards .avaliacao{
+        width: 30%;
+        margin-bottom: 30px;
+    }
+    .container-cards p{
+        margin-top: 30px;
     }
 }
