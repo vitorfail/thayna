@@ -16,7 +16,7 @@ body{
     height: auto;
 }
 .center{
-    width: 56%;
+    width: 58%;
     position: relative;
     display: flex;
     height: auto;
@@ -76,7 +76,7 @@ body{
 }
 .left{
     padding: 30px 0px;
-    width: 45%;
+    width: 42%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@ body{
 }
 .cta{
     width: 450px;
-background-color: transparent;
+    background-color: transparent;
     font-size: 18px;
     display: flex;
     justify-content: center;
@@ -115,16 +115,17 @@ background-color: transparent;
 }
 .prova-social{
     background: whitesmoke;
-    height: 420px;
+    height: 390px;
     padding: 20px 0px;
     display: flex;
+    margin-top: -50px;
     align-items: flex-end;
     justify-content: center;
 }
 .prova-social .content{
     border-radius: 10px;
     width: 100%;
-    height: 480px;
+    height: 410px;
     background: whitesmoke;
     position: absolute;
     display: flex;
@@ -153,6 +154,17 @@ background-color: transparent;
     justify-content: space-between;
     align-items: flex-start;
     mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+.ti-stars .ti-star{
+    width: 9;
+    aspect-ratio: 1/1;
+}
+.ti-stars{
+    padding-top: 7px;
+    height: auto;
+}
+.ti-verified-tooltip{
+    font-size: 9px;
 }
 .prova-social .content .rating{
     width: 12%;
@@ -227,11 +239,12 @@ background-color: transparent;
     justify-content: flex-start;
 }
 .carrosel .carro p{
-    font-size: 0.8rem;
+    font-size: 0.7em;
     color: black;
 }
 .carrosel .carro h4{
     color: black;
+    font-size: 0.8rem;
 }
 
 .carrosel .carro .google{
