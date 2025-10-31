@@ -6,6 +6,9 @@
     font-family: "Sora", sans-serif;
     color: white;
 }
+:root{
+    --verde:#0da712;
+}
 body{
     display: flex;
     align-items: center;
@@ -98,6 +101,7 @@ body{
     padding-left: 10px;
 }
 .cta{
+    position: relative;
     width: 450px;
     background-color: transparent;
     font-size: 18px;
@@ -106,12 +110,33 @@ body{
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-    background-image: linear-gradient(90deg, #0A800D 0%, #16E92C 100%);
+    background: linear-gradient(56deg, var(--verde), var(--verde), #16f52c, var(--verde), var(--verde));
+    background-size: 400%;
     border-style: solid;
     border-width: 4px 4px 4px 4px;
     border-color: #0A4F2A;
     border-radius: 8px 8px 8px 8px;
+    color: white !important;
     padding: 17px 65px 17px 65px;
+    animation: changeGradientAnimation 12s ease-in-out infinite;
+}
+.cta:hover{
+    transform: translateY(-8px);
+    background: transparent;
+    color: #16f52c !important;
+    border-color: #00b312;
+}
+@keyframes changeGradientAnimation {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 400%;
+    }
+    100% {
+        background-position: 0%;
+    }
 }
 .prova-social{
     background: whitesmoke;
@@ -191,7 +216,6 @@ body{
 .container-cards h1{
     line-height: 1;
     text-align: center;
-    font-size: 2.2rem;
     font-weight: 100;
     padding-top: 30px;
 }
@@ -265,7 +289,6 @@ body{
     text-align: center;
     font-weight: 100;
     color: black;
-    font-size: 2.2rem;
 }
 .second .sub{
     font-size: 1.3rem;
@@ -352,7 +375,157 @@ body{
     justify-content: center;
     flex-direction: column;
 }
+.container-relogio{
+    border-radius: 20px;
+    background: linear-gradient(to left top,#b72020,#e44646, #a81e1e);
+    width: 100%;
+    height: auto;
+    padding: 40px 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.521);
+    border: 2px solid rgb(255, 80, 80);
+}
+.container-relogio::after{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("clock.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.03; /* Opacidade da imagem */
+    border-radius: 20px;
+    z-index: 1; /* Coloca a imagem atrás do conteúdo */
+}
+.container-relogio h1, .relogio,.container-relogio p{
+    position: relative;
+    z-index: 2;
+}
 
+.container-relogio p{
+    padding: 30px 0px;
+    width: 45%;
+    font-size: 120%;
+    text-align: center;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer p{
+    font-size: 120%;
+    color: #252525;
+}
+footer img{
+    margin-top: 90px;
+    margin-bottom: 50px;
+    width: 25%;
+}
+.demora .lado-esquerdo,.demora .lado-direito{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.demora .lado-esquerdo h1 strong{
+    font-weight: bold;
+    color: rgb(212, 0, 0);
+}
+.demora .lado-esquerdo h1{
+    font-weight: 200;
+    line-height: 1;
+}
+.demora .lado-esquerdo *{
+    margin: 10px 0px;
+    color: rgb(71, 71, 71) ;
+}
+.demora .lado-esquerdo .cta i{
+    font-size: 100%;
+    padding: 0px;
+    margin-left: 10px;
+    color: white;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.demora .lado-esquerdo p{
+    font-size: 1.1rem;
+}
+.demora .lado-esquerdo span{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.demora .lado-esquerdo i{
+    font-size: 30px;
+    margin-right: 10px;
+    color: rgb(212, 0, 0);
+}
+.demora .lado-esquerdo{
+    padding-right: 70px;
+    width: 60%;
+}
+.demora{
+    padding: 70px 0px;
+}
+.demora .lado-direito{
+    width: 40%;
+}
+.demora .lado-direito img{
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.397);
+}
+#titulos{
+    font-size: 2.7rem;
+}
+.money {
+    pointer-events: none;
+    position: absolute;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-between;
+    top: 1%;
+    width: 100%;
+    display: flex;
+}
+#money i {
+    animation: money 0.8s 
+ease-in-out calc(var(--i) * 1s);
+}
+@keyframes money {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    90% {
+        transform: translateY(170px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+}
+.money i {
+    opacity: 0;
+    width: 12px;
+    height: 12px;
+    color: rgba(255, 0, 0, 0.61);
+}
 @media screen and (max-width: 768px) {
     .center{
         width: 90%;
@@ -376,14 +549,14 @@ body{
         align-items: center;
     }
     .left img{
-        width: 70%;
+        width: 50%;
     }
     .left h1{
         text-align: center;
-        font-size: 20px;
+        font-size: 22px;
     }
     .banner{
-        background-position: 60% -40%;
+        background-position: 65% 0%;        
         background-size: 390% 80%;
         height: 95vh;
     }
@@ -406,7 +579,7 @@ body{
         font-size: 170%;
         text-align: center;
     }.prova-social .content .rating{
-        width: 40%;
+        width: 25%;
     }
     .banner::before{
         background: linear-gradient(to top,#181818  50%, transparent);
@@ -421,5 +594,46 @@ body{
     }
     .container-cards p{
         margin-top: 30px;
+    }
+    .demora{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .demora .lado-direito{
+        width: 100%;
+        order: 1;
+    }
+    .demora .lado-esquerdo{
+        padding: 0;
+        width: 100%;
+        order: 2;
+    }
+    .demora .lado-esquerdo h1{
+        text-align: center;
+    }
+    .demora .lado-esquerdo span p{
+        line-height: 1;
+        text-align: left;
+    }
+    .demora .lado-esquerdo p{
+        text-align: center;
+    }
+    .container-relogio p{
+        font-size: 100%;
+        width: 90%;
+    }
+    #titulos{
+        font-size: 1.7rem;
+    }
+    .cta{
+        padding: 17px 30px;
+    }
+    footer img{
+        width: 62%;
+    }
+    footer p{
+        font-size: 60%;
     }
 }

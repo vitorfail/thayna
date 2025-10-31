@@ -204,7 +204,7 @@
             </div>
         </section>
         <section class="center second">
-            <h1>O problema que você <br> está <strong>enfrentando</strong>.</h1>
+            <h1 id="titulos">O problema que você <br> está <strong>enfrentando</strong>.</h1>
             <p class="sub">Seja o seu Instagram pessoal ou profissional, ter a sua conta invadida ou suspensa pode te causar uma série de problemas:</p>
             <div class="cards">
                 <div class="card">
@@ -258,12 +258,12 @@
             </div>
             <p class="sub">Eu sei que neste exato momento você está angustiado por ter perdido o acesso a sua rede social e está frustrado com a falta de suporte do Instagram.</p>
             <p class="sub">Sabemos o impacto que isso tem na sua vida, e é por isso que estamos aqui para tomar as rédeas da situação e garantir que sua conta seja recuperada.</p>
-            <a href="#" class="cta">FALAR COM UM ADVOGADO</a>
+            <a href="#" class="cta">FALAR COM UM ADVOGADO<i class="fa-brands fa-whatsapp"></i></a>
         </section>
         <section class="container-cards" >
             <section class="center">
             <img alt="avaliacao" class="avaliacao" src="usuarios.png" />
-            <h1>Quem usa <strong>recomenda.</strong></h1>	
+            <h1 id="titulos">Quem usa <strong>recomenda.</strong></h1>	
             <p>Entragamos resultado em pouco tempo. Nossos clientes tem 100% de avaliação</p>
             <section class="carousel">
                 <div>
@@ -293,6 +293,81 @@
                 </div>
             </section>
             </section>
+        </section>
+        <section class="demora center">
+            <div class="money"></div>
+            <div class="lado-esquerdo">
+                <h1 id="titulos">Quanto mais tempo você demora, <strong>maiores podem ser os danos.</strong></h1>
+                <p>Se sua conta for usada por terceiros, você pode sofrer:</p>
+                <span>
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <p><strong>Prejuízos financeiros</strong></p>
+                </span>
+                <span>
+                    <i class="fa-solid fa-face-sad-tear"></i>
+                    <p><strong>Comprometimento de sua reputação</strong></p>
+                </span>
+                <span>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p><strong>Vazamento de informações pessoais</strong></p>
+                </span>
+                <span>
+                    <i class="fa-solid fa-person-circle-exclamation"></i>                    
+                    <p><strong>Perda de acesso a clientes, seguidores ou parcerias</strong></p>
+                </span>
+                <p><strong>Proteja sua identidade digital</strong>. Agimos com rapidez para reverter a situação.</p>
+                <a href="#" class="cta">FALAR COM UM ADVOGADO<i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="lado-direito">
+                <img class="" alt="Demora" src="demora.webp"/>
+            </div>
+        </section>
+        <section class="footer center" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <div class="container-relogio">
+                <svg class="relogio" id="relogio" width="200" height="200">
+                    <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+                        <feOffset in="blur" dx="2.5" dy="2.5"/>
+                    </filter>
+
+                    <g>
+                        <circle id="shadow" style="fill:rgba(0,0,0,0.1)" cx="97" cy="100" r="87" filter="url(#innerShadow)"></circle>
+                        <circle id="circle" style="stroke: #FFF; stroke-width: 12px; fill:#20b7af00" cx="100" cy="100" r="80"></circle>
+                    </g>
+                    <g>
+                        <line x1="100" y1="100" x2="100" y2="55" transform="rotate(80 100 100)" style="stroke-width: 3px; stroke: #fffbf9;" id="hourhand">
+                            <animatetransform attributeName="transform"
+                                            attributeType="XML"
+                                            type="rotate"
+                                            dur="43200s"
+                                            repeatCount="indefinite"/>
+                        </line>
+                        <line x1="100" y1="100" x2="100" y2="40" style="stroke-width: 4px; stroke: #fdfdfd;" id="minutehand">
+                            <animatetransform attributeName="transform"
+                                            attributeType="XML"
+                                            type="rotate"
+                                            dur="3600s"
+                                            repeatCount="indefinite"/>
+                        </line>
+                        <line x1="100" y1="100" x2="100" y2="30" style="stroke-width: 2px; stroke: #C1EFED;" id="secondhand">
+                            <animatetransform attributeName="transform"
+                                            attributeType="XML"
+                                            type="rotate"
+                                            dur="60s"
+                                            repeatCount="indefinite"/>
+                        </line>
+                    </g>
+                    <circle id="center" style="fill:#20b7af00; stroke: #C1EFED; stroke-width: 2px;" cx="100" cy="100" r="3"></circle>
+                </svg>
+                <h1 id="titulos">Cada segundo conta</h1>
+                <p>Não espere mais. A cada dia que passa, você corre o risco de perder sua conta e seus dados para sempre.
+                Entre em contato conosco agora mesmo e recupere a sua conta e a sua paz de espírito!</p>
+                <a class="cta" href="#">FALAR COM UM ADVOGADO<i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <footer>
+                <img alt="Logo" src="logo-preta.png"/>
+                <p>Amaral Sampaio Advogados © 2025 | Todos os direitos reservados.</p>
+            </footer>
         </section>
         <script type="text/javascript" async src="script.js"></script>
     </body>

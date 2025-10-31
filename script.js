@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', function() {
             direction *= -1; // Inverte a direção
         }
     }, 1000); // Mover a cada 2 segundos
-    
+
     // Eventos para mouse
     comentario.addEventListener('mousedown', startDragging);
     comentario.addEventListener('mouseleave', stopDragging);
@@ -83,4 +83,81 @@ window.addEventListener('DOMContentLoaded', function() {
     comentario.addEventListener('touchmove', doDragging);
 
 
+});
+
+    var hands = [];
+    hands.push(document.querySelector('#secondhand > *'));
+    hands.push(document.querySelector('#minutehand > *'));
+    hands.push(document.querySelector('#hourhand > *'));
+
+    var cx = 100;
+    var cy = 100;
+
+    function shifter(val) {
+    return [val, cx, cy].join(' ');
+    }
+
+    var date = new Date();
+    var hoursAngle = 360 * date.getHours() / 12 + date.getMinutes() / 2;
+    var minuteAngle = 360 * date.getMinutes() / 60;
+    var secAngle = 360 * date.getSeconds() / 60;
+
+    hands[0].setAttribute('from', shifter(secAngle));
+    hands[0].setAttribute('to', shifter(secAngle + 360));
+    hands[1].setAttribute('from', shifter(minuteAngle));
+    hands[1].setAttribute('to', shifter(minuteAngle + 360));
+    hands[2].setAttribute('from', shifter(hoursAngle));
+    hands[2].setAttribute('to', shifter(hoursAngle + 360));
+
+    for(var i = 1; i <= 12; i++) {
+    var el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    el.setAttribute('x1', '100');
+    el.setAttribute('y1', '30');
+    el.setAttribute('x2', '100');
+    el.setAttribute('y2', '40');
+    el.setAttribute('transform', 'rotate(' + (i*360/12) + ' 100 100)');
+    el.setAttribute('style', 'stroke: #ffffff;');
+    document.getElementById("relogio").appendChild(el);
+    }
+function detectarScroll(el) {
+    var elements = document.querySelectorAll("."+el);
+    if (elements){
+        elements.forEach(function (element) {
+            var position = element.getBoundingClientRect();
+
+            // Verifica se o elemento está visível no viewport
+            if (position.top < window.innerHeight && position.bottom >= 20) {
+                element.id = el; // Adiciona a classe
+            }
+        });
+
+    }
+}
+window.addEventListener("scroll",function() {
+    detectarScroll("money")
+});
+const numeros = [1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2,4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2];
+const quadrados = numeros.map(num => num * num);
+const classes = [
+    "fa-solid fa-money-bill",
+    "fa-solid fa-dollar-sign",
+    "fa-solid fa-sack-xmark",
+    "fa-solid fa-piggy-bank"
+];
+// Seleciona a lista no HTML
+const lista = document.querySelector('.money');
+
+// Adiciona os quadrados na lista com um valor aleatório para --i
+quadrados.forEach(quadrado => {
+    const li = document.createElement('i');
+    const randomClass = classes[Math.floor(Math.random() * classes.length)];
+    li.className = randomClass
+
+    // Gera um número aleatório entre 1 e 100
+    const randomValue = Math.random() * 100;
+
+    // Define a variável CSS --i
+    li.style.setProperty('--i', randomValue / 50); // Ajusta para estar entre 0 e 1 para opacidade
+
+    lista.appendChild(li);
 });
