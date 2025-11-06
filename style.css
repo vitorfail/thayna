@@ -668,11 +668,11 @@ ease-in-out calc(var(--i) * 1s);
         width: 100%;
         margin-top: 10px;
     }
-    .demora{
-        padding: 0px 0px;
-    }
     .center{
         width: 90%;
+    }
+    .container-relogio{
+        margin: 25px 0px;
     }
     .second .cards .card{
         width: 100%;
@@ -690,10 +690,15 @@ ease-in-out calc(var(--i) * 1s);
     .left{
         width: 100%;
         height: 80%;
+        padding-top: 0px;
         align-items: center;
     }
     .left img{
         width: 50%;
+        margin-bottom: 10px;
+    }
+    .left .listas{
+        padding: 0px;
     }
     .left h1{
         text-align: center;
@@ -702,11 +707,21 @@ ease-in-out calc(var(--i) * 1s);
     .banner{
         background-position: 65% 0%;        
         background-size: 390% 80%;
-        height: 95vh;
+        height: 110vh;
+    }
+    .hero{
+        margin-top: 70px;
+        height: 100vh;
+        justify-content: flex-end;
     }
     .cta{
+        padding: 10px 0px;
         width: 100%;
+        text-align: center;
         font-size: 100%;
+    }
+    body{
+        padding: 0px;
     }
     .lista h3{
         font-size: 14px;   
@@ -715,10 +730,7 @@ ease-in-out calc(var(--i) * 1s);
         font-size: 14px;
         text-align: center;
     }
-    .hero{
-        margin-top: 70px;
-        justify-content: flex-end;
-    }
+
     .prova-social .content h2{
         font-size: 170%;
         text-align: center;
@@ -770,9 +782,6 @@ ease-in-out calc(var(--i) * 1s);
     }
     #titulos{
         font-size: 1.7rem;
-    }
-    .cta{
-        padding: 17px 30px;
     }
     footer img{
         width: 62%;
