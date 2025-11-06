@@ -273,34 +273,37 @@
             <img alt="avaliacao" class="avaliacao" src="usuarios.png" />
             <h1 id="titulos" class="show">Resultados <strong>Comprovados.</strong></h1>	
             <p class="show">Entragamos resultado em pouco tempo. Nossos clientes tem 100% de avaliação</p>
-            <section class="carousel show">
-                <div>
-                <div class="img" id="slide1"><img src="prova-social/1.jpeg" alt="Raymond McClenzie"></div>
-                </div>
-                    <div>
-                <div class="img" id="slide2"><img src="prova-social/2.jpeg" alt="Elizabeth Turner" loading="lazy"></div>
-                </div>
-                <!-- the "scroll-start" class is used to define which element should be "active" on load -->
-                <div class="scroll-start">
-                <div class="img" id="slide3"><img src="prova-social/3.jpeg" alt="Suzanne Yorke" loading="lazy"></div>
-                </div>
-                <div>
-                <div class="img" id="slide4"><img src="prova-social/4.jpeg" alt="Simon Hadley" loading="lazy"></div>
-                </div>
-                <div>
-                <div class="img" id="slide5"><img src="prova-social/4.jpeg" alt="Harriet Johnson" loading="lazy"></div>
-                </div>
-                <div>
-                <div class="img" id="slide6"><img src="prova-social/5.jpeg" alt="Felipe Rodriguez" loading="lazy"></div>
-                </div>
-                <div>
-                <div class="img" id="slide7"><img src="prova-social/6.jpeg" alt="Jonathon Simmons" loading="lazy"></div>
-                </div>
-                <div>
-                <div class="img" id="slide8"><img src="prova-social/1.jpeg" alt="Sarah-Jane Smith" loading="lazy"></div>
+            <section class="cont-container show">
+                <div class="carousel">
+                    <div class="a">
+                        <img class="item" src="prova-social/1.jpeg" alt="Raymond McClenzie" loading="lazy">
+                    </div>
+                    <div class="b">
+                        <img class="item" src="prova-social/2.jpeg" alt="Elizabeth Turner" loading="lazy">
+                    </div>
+                    <div class="c">
+                        <img class="item" src="prova-social/3.jpeg" alt="Suzanne Yorke" loading="lazy">
+                    </div>
+                    <div class="d">
+                        <img class="item" src="prova-social/4.jpeg" alt="Simon Hadley" loading="lazy">
+                    </div>
+                    <div class="e">
+                        <img class="item" src="prova-social/4.jpeg" alt="Harriet Johnson" loading="lazy">
+                    </div>
+                    <div class="f">
+                        <img class="item" src="prova-social/5.jpeg" alt="Felipe Rodriguez" loading="lazy">
+                    </div>
+                    <div class="g">
+                        <img class="item" src="prova-social/6.jpeg" alt="Jonathon Simmons" loading="lazy">
+                    </div>
+                    <div class="h">
+                        <img class="item" src="prova-social/1.jpeg" alt="Sarah-Jane Smith" loading="lazy">
+                    </div>
                 </div>
             </section>
             </section>
+            <div class="next" id="next">Next</div>
+            <div class="prev" id="prev">Prev</div>
         </section>
         <section class="demora center">
             <div class="money"></div>
@@ -423,108 +426,39 @@
         </section>
         <script type="text/javascript" async src="script.js"></script>
         <script>
-            class Carousel {
-            constructor(container) {
-                this.container = container;
-                this.items = Array.from(container.querySelectorAll('div[data-item]'));
-                this.markers = Array.from(container.querySelectorAll('.carousel-marker'));
-                this.prevBtn = container.querySelector('.carousel-nav.prev');
-                this.nextBtn = container.querySelector('.carousel-nav.next');
-                
-                this.init();
-            }
-            
-            init() {
-                // Observar mudanças no scroll
-                this.container.addEventListener('scroll', this.updateActiveState.bind(this));
-                
-                // Botões de navegação
-                this.prevBtn.addEventListener('click', () => this.scrollToPrev());
-                this.nextBtn.addEventListener('click', () => this.scrollToNext());
-                
-                // Marcadores
-                this.markers.forEach((marker, index) => {
-                marker.addEventListener('click', () => this.scrollToIndex(index));
-                });
-                
-                // Atualizar estado inicial
-                this.updateActiveState();
-                
-                // Keyboard navigation
-                this.container.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') this.scrollToPrev();
-                if (e.key === 'ArrowRight') this.scrollToNext();
-                });
-            }
-            
-            updateActiveState() {
-                const containerRect = this.container.getBoundingClientRect();
-                const containerCenter = containerRect.left + containerRect.width / 2;
-                
-                this.items.forEach((item, index) => {
-                const itemRect = item.getBoundingClientRect();
-                const itemCenter = itemRect.left + itemRect.width / 2;
-                const distance = Math.abs(itemCenter - containerCenter);
-                
-                if (distance < itemRect.width / 2) {
-                    item.classList.add('active');
-                    this.markers[index]?.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                    this.markers[index]?.classList.remove('active');
-                }
-                });
-                
-                // Atualizar estado dos botões
-                this.updateButtonStates();
-            }
-            
-            scrollToIndex(index) {
-                const item = this.items[index];
-                if (item) {
-                const containerRect = this.container.getBoundingClientRect();
-                const itemRect = item.getBoundingClientRect();
-                const scrollLeft = item.offsetLeft - (containerRect.width - itemRect.width) / 2;
-                
-                this.container.scrollTo({
-                    left: scrollLeft,
-                    behavior: 'smooth'
-                });
-                }
-            }
-            
-            scrollToPrev() {
-                const currentIndex = this.getCurrentIndex();
-                if (currentIndex > 0) {
-                this.scrollToIndex(currentIndex - 1);
-                }
-            }
-            
-            scrollToNext() {
-                const currentIndex = this.getCurrentIndex();
-                if (currentIndex < this.items.length - 1) {
-                this.scrollToIndex(currentIndex + 1);
-                }
-            }
-            
-            getCurrentIndex() {
-                return this.items.findIndex(item => item.classList.contains('active'));
-            }
-            
-            updateButtonStates() {
-                const currentIndex = this.getCurrentIndex();
-                this.prevBtn.disabled = currentIndex <= 0;
-                this.nextBtn.disabled = currentIndex >= this.items.length - 1;
-            }
-            }
+            var car = document.querySelector(".carousel"),
+            items = document.getElementsByClassName("item"),
+            currdeg = 0;
 
-            // Inicializar quando o DOM estiver pronto
-            document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.querySelector('.carousel');
-            if (carousel) {
-                new Carousel(carousel);
+            var next = document.getElementById("next")
+            var prev = document.getElementById("prev")
+
+            // Corrigindo a forma de passar os parâmetros para a função rotate
+            next.addEventListener("click", function() { rotate("n") })
+            prev.addEventListener("click", function() { rotate("p") })
+
+            function rotate(e) {
+                if(e == "n") {
+                    currdeg = currdeg - 60;
+                }
+                if(e == "p") {
+                    currdeg = currdeg + 60;
+                }
+                
+                // Substituindo .css() do jQuery por style do JavaScript nativo
+                car.style.webkitTransform = "rotateY(" + currdeg + "deg)";
+                car.style.mozTransform = "rotateY(" + currdeg + "deg)";
+                car.style.oTransform = "rotateY(" + currdeg + "deg)";
+                car.style.transform = "rotateY(" + currdeg + "deg)";
+                
+                // Aplicando a mesma transformação para todos os items
+                for(var i = 0; i < items.length; i++) {
+                    items[i].style.webkitTransform = "rotateY(" + (-currdeg) + "deg)";
+                    items[i].style.mozTransform = "rotateY(" + (-currdeg) + "deg)";
+                    items[i].style.oTransform = "rotateY(" + (-currdeg) + "deg)";
+                    items[i].style.transform = "rotateY(" + (-currdeg) + "deg)";
+                }
             }
-            });
         </script>
     </body>
 </html>

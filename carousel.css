@@ -1,182 +1,95 @@
-@import url(https://fonts.bunny.net/css?family=jura:300,500);
 
-/* Versão compatível com Safari */
+
+.cont-container {
+  margin: 0 auto;
+  width: 250px;
+  height: 90vh;
+  position: relative;
+  padding-top: 100px;
+  perspective: 1000px;
+}
+
 .carousel {
-  --nav-btn-size: 40px;
-  --nav-btn-bg: rgb(15, 23, 43);
-  --nav-btn-txt: white;
-  --nav-marker-bg: rgb(15, 23, 43);
-  
-  width: min(calc(100% - 2rem), 700px);
-  list-style: none;
-  padding-block: 2rem;
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* Melhor scroll no iOS */
-  scrollbar-width: none;
-  position: relative;
-  padding-inline: 60px; /* Espaço para os botões */
+  height: fit-content;
+  width: 250px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.carousel div {
+  transform-style: preserve-3d;
+  height: fit-content;
 }
 
-/* Esconder scrollbar no Webkit (Safari/Chrome) */
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* Container para os itens - solução alternativa para centralização */
-.carousel::before,
-.carousel::after {
-  content: '';
-  min-width: calc(50% - 125px); /* Centralização aproximada */
-  scroll-snap-align: start;
-}
-
-.carousel > div {
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.item {
+  display: block;
+  position: absolute;
+  background: #000;
+  width: 250px;
+  height: auto;
+  line-height: 200px;
+  font-size: 5em;
   text-align: center;
-  transition: all 300ms ease-in-out;
-  position: relative;
+  color: #FFF;
+  opacity: 0.95;
+  border-radius: 10px;
+  transition: transform 1s;
 }
 
-/* Estados dos itens - usando JavaScript como fallback */
-.carousel > div:not(.active) h2 {
-  transform: scale(0.5);
-  opacity: 0.5;
-  translate: 0 -100px;
+.a {
+  transform: rotateY(0deg) translateZ(250px);
+}
+.a .item {
+  background: #ed1c24;
+}
+.b {
+  transform: rotateY(60deg) translateZ(250px) rotateY(-60deg);
+}
+.b .item {
+  background: #0072bc;
+}
+.c {
+  transform: rotateY(120deg) translateZ(250px)  rotateY(-120deg);
+}
+.c .item {
+  background: #39b54a;
+}
+.d {
+  transform: rotateY(180deg) translateZ(250px) rotateY(-180deg);
+}
+.d .item {
+  background: #f26522;
+}
+.e {
+  transform: rotateY(240deg) translateZ(250px) rotateY(-240deg);
+} 
+.e .item {
+  background: #630460;
+}
+.f {
+  transform: rotateY(300deg) translateZ(250px) rotateY(-300deg);
+}
+.f .item {
+  background: #8c6239;
 }
 
-.carousel > div:not(.active) p {
-  transform: scale(0.5);
-  opacity: 0;
-}
-
-.carousel > div:not(.active) .img {
-  transform: scale(0.5);
-  opacity: 0.5;
-}
-
-.carousel > div.active h2,
-.carousel > div.active p,
-.carousel > div.active .img {
-  transform: scale(1);
-  opacity: 1;
-  translate: 0 0;
-}
-
-/* Imagens */
-.carousel .img {
-  width: 100%;
-}
-
-.carousel .img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0 0 0 / .25);
-}
-
-/* Títulos */
-.carousel h2 {
-  margin: 1rem 0 0 0;
-  font-size: 1.3rem;
-  white-space: nowrap;
-  transition: all 300ms ease-in-out;
-}
-
-.carousel p {
-  margin: 0;
-  white-space: nowrap;
-  transition: all 300ms ease-in-out;
-}
-
-/* Botões de navegação - versão compatível */
-.carousel-nav {
+.next, .prev {
+  color: #444;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  width: var(--nav-btn-size);
-  height: var(--nav-btn-size);
-  background-color: var(--nav-btn-bg);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  font: inherit;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.7;
-  transition: all 150ms ease-in-out;
   z-index: 10;
-}
-
-.carousel-nav:hover {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-nav.prev {
-  left: 10px;
-}
-
-.carousel-nav.next {
-  right: 10px;
-}
-
-.carousel-nav:disabled {
-  opacity: 0.25;
-  cursor: not-allowed;
-}
-
-/* Marcadores - versão compatível */
-.carousel-markers {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.carousel-marker {
-  width: 12px;
-  height: 12px;
-  background-color: var(--nav-marker-bg);
-  border-radius: 50%;
-  opacity: 0.25;
-  transition: all 150ms ease-in-out;
-  border: none;
+  padding: 1em 2em;
   cursor: pointer;
+  background: #CCC;
+  border-radius: 5px;
+  border-top: 1px solid #FFF;
+  box-shadow: 0 5px 0 #999;
+  transition: box-shadow 0.1s, top 0.1s;
 }
-
-.carousel-marker.active {
-  opacity: 1;
-  transform: scale(1.2);
+.next:hover, .prev:hover { color: #000; }
+.next:active, .prev:active {
+  top: 104px;
+  box-shadow: 0 1px 0 #999;
 }
-
-.carousel-marker:hover {
-  opacity: 0.75;
-}
-
-/* Estilos base mantidos */
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  color-scheme: light dark;
-}
-
-
-
-h1 {
-  margin: 0;
-  font-size: 1.2rem;
-}
+.next { right: 5em; }
+.prev { left: 5em; }
