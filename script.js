@@ -164,63 +164,25 @@ quadrados.forEach(quadrado => {
 
 const carousel = document.querySelector('.carousel');
 
-// Configurações do autoplay
-const autoplayInterval = 1000; // 3 segundos
-let autoplayTimer;
-
-// Função para ir para o próximo slide
-function nextSlide() {
-    const currentSlide = carousel.querySelector(':target');
-    const slides = carousel.children;
-    const totalSlides = slides.length - 2; // Desconta os pseudo-elementos ::before e ::after
+const animateOnScroll = function() {
+    const elements = document.querySelectorAll('.show');
     
-    if (currentSlide) {
-        const currentIndex = Array.from(slides).indexOf(currentSlide);
-        const nextIndex = (currentIndex + 1) % totalSlides;
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
         
-        // Pula os pseudo-elementos (primeiro e último)
-        const actualNextIndex = nextIndex + 1;
-        
-        if (actualNextIndex < slides.length - 1) {
-            const nextSlide = slides[actualNextIndex];
-            const nextSlideId = nextSlide.id;
-            
-            // Navega para o próximo slide usando a âncora
-            window.location.hash = nextSlideId;
+        if (elementPosition < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
         }
-    } else {
-        // Se não há slide atual, vai para o primeiro
-        const firstSlide = slides[1]; // Pula o ::before
-        if (firstSlide && firstSlide.id) {
-            window.location.hash = firstSlide.id;
-        }
-    }
+    })
 }
+// Set initial state
+const services = document.querySelectorAll('.show');
 
-// Função para iniciar o autoplay
-function startAutoplay() {
-    stopAutoplay(); // Para qualquer timer existente
-    autoplayTimer = setInterval(nextSlide, autoplayInterval);
-}
-
-// Função para parar o autoplay
-function stopAutoplay() {
-    if (autoplayTimer) {
-        clearInterval(autoplayTimer);
-        autoplayTimer = null;
-    }
-}
-
-// Inicia o autoplay quando a página carrega
-startAutoplay();
-
-// Pausa o autoplay quando o usuário interage com o carousel
-carousel.addEventListener('mouseenter', stopAutoplay);
-carousel.addEventListener('mouseleave', startAutoplay);
-carousel.addEventListener('focusin', stopAutoplay);
-carousel.addEventListener('focusout', startAutoplay);
-carousel.addEventListener('scroll', function() {
-    stopAutoplay();
-    // Reinicia após um tempo sem interação
-    setTimeout(startAutoplay, 5000);
+services.forEach(service => {
+    service.style.opacity = '0';
+    service.style.transform = 'translateY(30px)';
+    service.style.transition = 'all 0.6s ease';
 });
+window.addEventListener('scroll', animateOnScroll);
