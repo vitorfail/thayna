@@ -381,7 +381,18 @@ body{
     width: 100%;
     height: auto;
     padding: 50px 0px;
-    background: linear-gradient(to right, #151746, #262852);
+  background-image: 
+    linear-gradient(to right, #151746f5, #262852f1),
+    url('office.webp');
+
+  /* Faz a imagem cobrir toda a tela */
+  background-size: cover;
+
+  /* Centraliza a imagem */
+  background-position: center;
+
+  /* Evita repetição */
+  background-repeat: no-repeat;
 }
 .quem-somos .center{
     flex-direction: column;
@@ -413,11 +424,15 @@ body{
 .quem-somos .container .adv:hover{
     scale: 1.02;
 }
-.quem-somos .container .adv,.left .listas{
+.quem-somos .container .adv{
     backdrop-filter: blur(30px);
     background: #ffffff33;
-    border: 1px solid #ffffff80;    
-    box-shadow: 0px 0px 25px rgba(18, 18, 19, 0.651);
+    /*border: 1px solid #ffffff80;    
+    box-shadow: 0px 0px 25px rgba(18, 18, 19, 0.651);*/
+}
+.left .listas{
+    backdrop-filter: blur(30px);
+    background: #1a1a1a;
 }
 .quem-somos .container .adv{
     width: 32%;
@@ -502,6 +517,16 @@ footer img{
     justify-content: flex-start;
     flex-direction: column;
 }
+.demora .lado-esquerdo .lista{
+    border-radius: 10px;
+    padding: 0px 0px;
+}
+.demora .lado-esquerdo .lista p{
+    color: black;
+}
+.demora .lado-esquerdo .lista i{
+    color: var(--laranja);
+}
 .demora .lado-esquerdo h1 strong{
     font-weight: bold;
     color: var(--laranja);
@@ -511,8 +536,8 @@ footer img{
     line-height: 1;
 }
 .demora .lado-esquerdo *{
-    margin: 10px 0px;
-    color: rgb(71, 71, 71) ;
+    padding: 10px 0px;
+    color: #181818;
 }
 .demora .lado-esquerdo .cta i{
     font-size: 100%;
@@ -541,7 +566,9 @@ footer img{
     width: 60%;
 }
 .demora{
-    padding: 70px 0px;
+    border-radius: 20px;
+    padding: 70px 10px;
+    color: white;
 }
 .demora .lado-direito{
     width: 40%;
@@ -601,6 +628,9 @@ ease-in-out calc(var(--i) * 1s);
     .quem-somos .container .adv{
         width: 100%;
         margin-top: 10px;
+    }
+    .demora{
+        padding: 0px 0px;
     }
     .center{
         width: 90%;
