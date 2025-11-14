@@ -9,6 +9,7 @@
   position: relative;
   padding-top: 100px;
   perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 .carousel {
@@ -16,9 +17,11 @@
   width: 250px;
   position: absolute;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: transform 1s;
 }
 .carousel div {
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   height: fit-content;
 }
@@ -35,6 +38,8 @@
   color: #FFF;
   opacity: 0.95;
   border-radius: 10px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform 1s;
 }
 
