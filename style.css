@@ -615,6 +615,9 @@ footer img{
     animation: money 0.8s 
 ease-in-out calc(var(--i) * 1s);
 }
+.footer{
+    padding: 50px 0px;
+}
 @keyframes money {
     0% {
         opacity: 1;
@@ -707,15 +710,18 @@ ease-in-out calc(var(--i) * 1s);
     .banner{
         background-position: 65% 0%;        
         background-size: 390% 80%;
-        height: 110vh;
+        height: 100vh;
+    }
+    .quem-somos .container .adv h1{
+        font-size: 20px;
     }
     .hero{
         margin-top: 70px;
-        height: 100vh;
+        height: 95vh;
         justify-content: flex-end;
     }
     .cta{
-        padding: 10px 0px;
+        padding: 17px 0px;
         width: 100%;
         text-align: center;
         font-size: 100%;
@@ -744,6 +750,9 @@ ease-in-out calc(var(--i) * 1s);
         width: 100%;
         font-size: 100%;
     }
+    .container-cards{
+        overflow-x: hidden;
+    }
     .container-cards .avaliacao{
         width: 30%;
         margin-bottom: 30px;
@@ -751,6 +760,7 @@ ease-in-out calc(var(--i) * 1s);
     .container-cards p{
         margin-top: 30px;
     }
+
     .demora{
         display: flex;
         align-items: center;
@@ -771,8 +781,47 @@ ease-in-out calc(var(--i) * 1s);
     }
     .demora .lado-esquerdo span p{
         line-height: 1;
-        text-align: left;
+        text-align: center;
     }
+    .demora .lado-esquerdo .lista i{
+        position: relative;
+         overflow: hidden;
+    }
+    .demora .lado-esquerdo .lista i::after {
+        content: "";
+        position: absolute;
+        bottom: -100%;    /* começa por baixo */
+        left: -50%;       /* começa à esquerda */
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.7) 50%,
+            rgba(255,255,255,0) 100%
+        );
+        transform: rotate(20deg);
+          -webkit-mask-image: text;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+        animation: shine 1.5s infinite;
+        }
+
+        /* Animação */
+        @keyframes shine {
+        0% {
+            left: -80%;
+            bottom: -120%;
+        }
+        60% {
+            left: 120%;
+            bottom: 0%;
+        }
+        100% {
+            left: 180%;
+            bottom: 100%;
+        }
+        }
     .demora .lado-esquerdo p{
         text-align: center;
     }
@@ -794,5 +843,8 @@ ease-in-out calc(var(--i) * 1s);
     }
     .second .cards{
         width: 100%;
+    }
+    .footer{
+        padding: 0px 0px;
     }
 }

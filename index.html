@@ -302,8 +302,6 @@
                 </div>
             </section>
             </section>
-            <div class="next" id="next">Next</div>
-            <div class="prev" id="prev">Prev</div>
         </section>
         <section class="demora center">
             <div class="money"></div>
@@ -430,12 +428,6 @@
             items = document.getElementsByClassName("item"),
             currdeg = 0;
 
-            var next = document.getElementById("next")
-            var prev = document.getElementById("prev")
-
-            // Corrigindo a forma de passar os parâmetros para a função rotate
-            next.addEventListener("click", function() { rotate("n") })
-            prev.addEventListener("click", function() { rotate("p") })
 
             function rotate(e) {
                 if(e == "n") {
@@ -459,6 +451,10 @@
                     items[i].style.transform = "rotateY(" + (-currdeg) + "deg)";
                 }
             }
+
+            setInterval(function() {
+                rotate("n")
+            }, 2000);
         </script>
     </body>
 </html>

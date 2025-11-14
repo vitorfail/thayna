@@ -1,4 +1,6 @@
-
+:root{
+  --sombra: inset 0px 0px 12px #07070760;
+}
 
 .cont-container {
   margin: 0 auto;
@@ -93,3 +95,41 @@
 }
 .next { right: 5em; }
 .prev { left: 5em; }
+
+@media screen and (max-width: 768px) {
+      .item{
+        width: 150px;
+    }
+    .carousel{
+      width: 150px;
+    }
+    .cont-container{
+      display: flex;
+      justify-content: center;
+      height: 60vh;
+    }
+    .demora .lado-esquerdo span{
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .demora .lado-esquerdo .lista i{
+      border-radius: 50%;
+      border: 3px solid var(--laranja);
+      height: 80px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .demora .lado-esquerdo .lista i::before{
+      font-size: 50px;
+      text-shadow: var(--sombra);
+    }
+    .demora .lado-esquerdo .lista strong{
+      text-align: center;
+    }
+    .demora .lado-esquerdo .lista i{
+      box-shadow: var(--sombra);
+    }
+}

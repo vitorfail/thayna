@@ -185,4 +185,6 @@ services.forEach(service => {
     service.style.transform = 'translateY(30px)';
     service.style.transition = 'all 0.6s ease';
 });
+
+
 window.addEventListener('scroll', animateOnScroll);
