@@ -849,4 +849,18 @@ ease-in-out calc(var(--i) * 1s);
     .footer{
         padding: 0px 0px;
     }
+    .demora .lado-esquerdo span {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .demora .lado-esquerdo .lista i {
+        border-radius: 50%;
+        border: 3px solid var(--laranja);
+        height: 50px;
+        width: 50px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
 }

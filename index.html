@@ -273,34 +273,24 @@
             <img alt="avaliacao" class="avaliacao" src="usuarios.png" />
             <h1 id="titulos" class="show">Resultados <strong>Comprovados.</strong></h1>	
             <p class="show">Entragamos resultado em pouco tempo. Nossos clientes tem 100% de avaliação</p>
-            <section class="cont-container show">
-                <div class="carousel">
-                    <div class="a">
-                        <img class="item" src="prova-social/1.jpeg" alt="Raymond McClenzie" loading="lazy">
-                    </div>
-                    <div class="b">
-                        <img class="item" src="prova-social/2.jpeg" alt="Elizabeth Turner" loading="lazy">
-                    </div>
-                    <div class="c">
-                        <img class="item" src="prova-social/3.jpeg" alt="Suzanne Yorke" loading="lazy">
-                    </div>
-                    <div class="d">
-                        <img class="item" src="prova-social/4.jpeg" alt="Simon Hadley" loading="lazy">
-                    </div>
-                    <div class="e">
-                        <img class="item" src="prova-social/4.jpeg" alt="Harriet Johnson" loading="lazy">
-                    </div>
-                    <div class="f">
-                        <img class="item" src="prova-social/5.jpeg" alt="Felipe Rodriguez" loading="lazy">
-                    </div>
-                    <div class="g">
-                        <img class="item" src="prova-social/6.jpeg" alt="Jonathon Simmons" loading="lazy">
-                    </div>
-                    <div class="h">
-                        <img class="item" src="prova-social/1.jpeg" alt="Sarah-Jane Smith" loading="lazy">
+            <section class="row">
+                <div class="nine columns">
+                    <div class="coverflow top10 bot10" data-coverflow-position="6">
+                    <a class="prev-arrow"></a>
+                    <div ><img src="prova-social/1.jpeg" class="coverflow__image" data-coverflow-index="1" style="cursor: default;"></div>
+                    <div ><img src="prova-social/2.jpeg" class="coverflow__image" data-coverflow-index="2" style="cursor: default;"></div>
+                    <div ><img src="prova-social/3.jpeg" class="coverflow__image" data-coverflow-index="3" style="cursor: default;"></div>
+                    <div ><img src="prova-social/4.jpeg" class="coverflow__image" data-coverflow-index="4"></div>
+                    <div ><img src="prova-social/5.jpeg" class="coverflow__image" data-coverflow-index="5" style="cursor: default;"></div>
+                    <div  style="cursor: pointer;"><img src="prova-social/6.jpeg" class="coverflow__image" data-coverflow-index="6" style="cursor: default;"></div>
+                    <div  style="cursor: pointer;"><img src="prova-social/3.jpeg" class="coverflow__image" data-coverflow-index="7" style="cursor: default;"></div>
+                    <div  style="cursor: pointer;"><img src="prova-social/1.jpeg" class="coverflow__image" data-coverflow-index="8" style="cursor: default;"></div>
+                    <div  style="cursor: pointer;"><img src="prova-social/4.jpeg" class="coverflow__image" data-coverflow-index="9" style="cursor: default;"></div>
+                    <div  style="cursor: pointer;"><img src="prova-social/5.jpeg" class="coverflow__image" data-coverflow-index="10" style="cursor: default;"></div>
+                    <a class="next-arrow"></a>
                     </div>
                 </div>
-            </section>
+                </section>            
             </section>
         </section>
         <section class="demora center">
@@ -424,37 +414,7 @@
         </section>
         <script type="text/javascript" async src="script.js"></script>
         <script>
-            var car = document.querySelector(".carousel"),
-            items = document.getElementsByClassName("item"),
-            currdeg = 0;
 
-
-            function rotate(e) {
-                if(e == "n") {
-                    currdeg = currdeg - 60;
-                }
-                if(e == "p") {
-                    currdeg = currdeg + 60;
-                }
-                
-                // Substituindo .css() do jQuery por style do JavaScript nativo
-                car.style.webkitTransform = "rotateY(" + currdeg + "deg)";
-                car.style.mozTransform = "rotateY(" + currdeg + "deg)";
-                car.style.oTransform = "rotateY(" + currdeg + "deg)";
-                car.style.transform = "rotateY(" + currdeg + "deg)";
-                
-                // Aplicando a mesma transformação para todos os items
-                for(var i = 0; i < items.length; i++) {
-                    items[i].style.webkitTransform = "rotateY(" + (-currdeg) + "deg)";
-                    items[i].style.mozTransform = "rotateY(" + (-currdeg) + "deg)";
-                    items[i].style.oTransform = "rotateY(" + (-currdeg) + "deg)";
-                    items[i].style.transform = "rotateY(" + (-currdeg) + "deg)";
-                }
-            }
-
-            setInterval(function() {
-                rotate("n")
-            }, 2000);
         </script>
     </body>
 </html>
