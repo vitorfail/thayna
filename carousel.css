@@ -800,3 +800,23 @@ cubic-bezier(0.215, 0.61, 0.355, 1);
   .next-arrow:after {
     content: "❯";
 }
+.next-arrow:after, .prev-arrow::before{
+      text-shadow: 0px 0px 27px #ff5300;
+}
+@media screen and (max-width: 768px) {
+    .prev-arrow, .next-arrow {
+        padding: 0;
+    }
+    .coverflow{
+      height: 550px;
+      padding: 0;
+      padding-left: 150px;
+    }
+    .coverflow__image{
+      width: 250px;
+    }
+    .coverflow{
+      display: flex;
+      justify-content: center;
+    }
+}
