@@ -183,7 +183,7 @@ body{
     mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 }
 .ti-stars .ti-star{
-    width: 9;
+    width: 9px;
     aspect-ratio: 1/1;
 }
 .ti-stars{
