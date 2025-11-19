@@ -1,3 +1,645 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    font-family: "Sora", sans-serif;
+    color: white;
+}
+:root{
+    --verde:#0da712;
+    --laranja:rgb(252, 122, 30);
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: whitesmoke;
+    height: auto;
+}
+.center{
+    width: 58%;
+    position: relative;
+    display: flex;
+    height: auto;
+    justify-content: center;
+}
+.banner{
+    padding: 0px 20px;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    background:url("banner.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+}
+.banner::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top,#18181844  5%, transparent);
+}
+.hero{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 50px;
+}
+.hero p{
+    font-size: 1.3rem;
+    font-weight:100;
+}
+
+.left .listas{
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.856);
+}
+.left .listas .lista{
+    align-items: center;
+    padding: 10px;
+    display: flex;
+}
+.left .listas .lista i{
+    padding-right: 15px;
+    color: var(--laranja);
+}
+.left h1{
+    font-size: 2.5rem;
+    line-height: 1;
+}
+.left{
+    padding: 30px 0px;
+    width: 42%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.left strong{
+    color: var(--laranja);
+}
+.left img{
+    width: 50%;
+}
+.satisfeitos span{
+    font-size: 30px;
+    color: orange;
+    font-weight: 700;
+}
+.cta i{
+    padding-left: 10px;
+}
+.cta{
+    position: relative;
+    width: 450px;
+    background-color: transparent;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(56deg, var(--verde), var(--verde), #16f52c, var(--verde), var(--verde));
+    background-size: 400%;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #0A4F2A;
+    border-radius: 8px 8px 8px 8px;
+    color: white !important;
+    padding: 17px 65px 17px 65px;
+    animation: changeGradientAnimation 12s ease-in-out infinite;
+}
+.cta:hover{
+    transform: translateY(-8px);
+    background: transparent;
+    color: #16f52c !important;
+    border-color: #00b312;
+}
+@keyframes changeGradientAnimation {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 400%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+.prova-social{
+    background: whitesmoke;
+    height: 390px;
+    padding: 20px 0px;
+    display: flex;
+    margin-top: -50px;
+    align-items: flex-end;
+    justify-content: center;
+}
+.prova-social .content{
+    border-radius: 10px;
+    width: 100%;
+    height: 410px;
+    background: whitesmoke;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.219);
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.prova-social .content h2 strong{
+    color: var(--laranja);
+    font-weight: bold;
+}
+.prova-social .content h2{
+    font-weight: 100;
+    font-size: 2rem;
+    padding: 30px 0px;
+    color: rgb(39, 39, 39);
+}
+.container-carrosel{
+    height: auto;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+        display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+.ti-stars .ti-star{
+    width: 9;
+    aspect-ratio: 1/1;
+}
+.ti-stars{
+    padding-top: 7px;
+    height: auto;
+}
+.ti-verified-tooltip{
+    font-size: 9px;
+}
+.prova-social .content .rating{
+    width: 12%;
+    height: auto;
+}
+.second{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 0px;
+}
+.carrosel{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    animation: scroll 30s linear infinite;
+    width: auto;
+    height: 100%;
+}
+.container-cards .avaliacao{
+    width: 10%;
+}
+.container-cards h1{
+    line-height: 1;
+    text-align: center;
+    font-weight: 100;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.container-cards p{
+    font-size: 1.3rem;
+    text-align: center;
+    color: #d7d7d7;
+    padding-bottom: 80px;
+}
+
+@keyframes scroll {
+    0% {
+    transform: translateX(0);
+}
+
+100% {
+    transform: translateX(calc(-250px * 5));
+}
+}
+.carrosel .carro{
+    margin: 0px 10px;
+    padding: 20px 20px;
+    border-radius: 15px;
+    color: white;
+    background: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 350px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.103);
+}
+.carrosel .carro .titulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.carrosel .carro .titulo .info .perfil{
+    width: 40px;
+    height: auto;
+}
+.carrosel .carro .titulo .info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.carrosel .carro p{
+    font-size: 0.7em;
+    color: black;
+}
+.carrosel .carro h4{
+    color: black;
+    font-size: 0.8rem;
+}
+
+.carrosel .carro .google{
+    position: relative;
+}
+.carrosel .carro .google a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+.second .sub{
+    text-align: center;
+    color: black;
+    width: 50%;
+}
+.second h1{
+    text-align: center;
+    font-weight: 100;
+    color: black;
+}
+.second .sub{
+    font-size: 1.3rem;
+    color: rgb(71, 71, 71);
+}
+.second .sub, .second h1{
+    padding-bottom: 50px;
+}
+.second h1 strong{
+    font-weight: bold;
+    color: black;
+}
+.second .cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 78%;
+    justify-content: space-between;
+}
+.second .cards .card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    width: 49%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-image: linear-gradient(149deg, #03060E 0%, #1F3057 100%);
+}
+.second .cards .card .titulos p{
+    font-size: 1rem;
+    text-align: justify;
+    color: thistle;
+}
+.second .cards .card .titulos{
+    display: flex;
+    min-height: 40%;
+    width: 100%;
+    padding: 0px 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.second .cards .card .titulos .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+.second .cards .card .titulos .icon h3{
+    font-weight: 400;
+    line-height: 1.1;
+    width: 100%;
+}
+.second .cards .card .titulos .icon span{
+    background:green;
+    padding: 7px 7px;
+    font-size: 25px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.589);
+}
+.second .cards .card .titulos .icon i{
+    color: white;
+}
+
+.second .cards .card video{
+    width: 100%;
+}
+.container-cards{
+    padding: 50px 0px;
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right, #151746, #262852);
+}
+.quem-somos #titulos{
+    font-weight: 100;
+}
+.quem-somos #titulos strong{
+    color: var(--laranja);
+    font-weight: bold;
+}
+.quem-somos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 50px 0px;
+  background-image: 
+    linear-gradient(to right, #151746f5, #262852f1),
+    url('office.webp');
+
+  /* Faz a imagem cobrir toda a tela */
+  background-size: cover;
+
+  /* Centraliza a imagem */
+  background-position: center;
+
+  /* Evita repetição */
+  background-repeat: no-repeat;
+}
+.quem-somos .center{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.quem-somos .container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.quem-somos .container .adv img{
+    width: 100%;
+}
+.quem-somos .container .adv h1{
+    padding: 10px 0px;
+    font-size: 20px;
+}
+.quem-somos .container .adv p{
+    opacity: 0.7;
+    text-align: justify;
+}
+.quem-somos .container .adv *{
+    color: #ffffff !important;
+}
+.quem-somos .container .adv, .quem-somos .container .adv img{
+    border-radius: 10px;
+}
+.quem-somos .container .adv:hover{
+    scale: 1.02;
+}
+.quem-somos .container .adv{
+    backdrop-filter: blur(30px);
+    background: #ffffff33;
+    /*border: 1px solid #ffffff80;    
+    box-shadow: 0px 0px 25px rgba(18, 18, 19, 0.651);*/
+}
+.quem-somos .t{
+    color: #d7d7d7;
+    padding: 40px 0px; 
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.left .listas{
+    backdrop-filter: blur(30px);
+    background: #1a1a1a;
+}
+.quem-somos .container .adv{
+    width: 32%;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ 
+}
+.container-cards strong{
+    font-weight: bold;
+    color: var(--laranja);
+}
+.container-cards .center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container-relogio{
+    border-radius: 20px;
+    background: linear-gradient(to left top,#b72020,#e44646, #a81e1e);
+    width: 100%;
+    height: auto;
+    padding: 40px 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.521);
+    border: 2px solid rgb(255, 80, 80);
+}
+.container-relogio::after{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("clock.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.03; /* Opacidade da imagem */
+    border-radius: 20px;
+    z-index: 1; /* Coloca a imagem atrás do conteúdo */
+}
+.container-relogio h1, .relogio,.container-relogio p{
+    position: relative;
+    z-index: 2;
+}
+
+.container-relogio p{
+    padding: 30px 0px;
+    width: 45%;
+    font-size: 120%;
+    text-align: center;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer p{
+    font-size: 120%;
+    color: #252525;
+}
+footer img{
+    margin-top: 90px;
+    margin-bottom: 50px;
+    width: 25%;
+}
+.demora .lado-esquerdo,.demora .lado-direito{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.demora .lado-esquerdo .lista{
+    border-radius: 10px;
+    padding: 0px 0px;
+}
+.demora .lado-esquerdo .lista strong{
+    color: rgb(49, 49, 49);
+}
+.demora .lado-esquerdo .lista i{
+    color: var(--laranja);
+}
+.demora .lado-esquerdo h1 strong{
+    font-weight: bold;
+    color: var(--laranja);
+}
+.demora .lado-esquerdo h1{
+    font-weight: 200;
+    line-height: 1;
+}
+.demora .lado-esquerdo *{
+    padding: 10px 0px;
+    color: #181818;
+}
+.demora .lado-esquerdo .cta i{
+    font-size: 100%;
+    padding: 0px;
+    margin-left: 10px;
+    color: white;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.demora .lado-esquerdo p{
+    font-size: 1.3rem;
+}
+.demora .lado-esquerdo span{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.demora .lado-esquerdo i{
+    font-size: 30px;
+    margin-right: 10px;
+    color: rgb(212, 0, 0);
+}
+.demora .lado-esquerdo{
+    padding-right: 70px;
+    width: 60%;
+}
+.demora{
+    border-radius: 20px;
+    padding: 70px 10px;
+    color: white;
+}
+.demora .lado-direito{
+    width: 40%;
+}
+.demora .lado-direito img{
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.397);
+}
+#titulos{
+    padding: 20px 0px;
+    font-size: 2.3rem;
+}
+.money {
+    pointer-events: none;
+    position: absolute;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-between;
+    top: 1%;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+}
+#money i {
+    animation: money 0.8s 
+ease-in-out calc(var(--i) * 1s);
+}
+.footer{
+    padding: 50px 0px;
+}
+@keyframes money {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    90% {
+        transform: translateY(170px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+}
+.money i {
+    opacity: 0;
+    width: 12px;
+    height: 12px;
+    color: rgba(255, 0, 0, 0.61);
+}
 .row{
       align-items: center;
     width: 100%;
@@ -803,8 +1445,232 @@ cubic-bezier(0.215, 0.61, 0.355, 1);
 .next-arrow:after, .prev-arrow::before{
       text-shadow: 0px 0px 27px #ff5300;
 }
+
+@media screen and (max-width: 820px) {
+    .center{
+        width: 80%;
+    }
+    .left{
+        width: 60%;
+    }
+    .banner{
+        background-position: 65% 30%;
+    }
+    .second .cards{
+        width: 100%;
+    }
+    .quem-somos .container{
+        flex-direction: column;
+    }.quem-somos .container .adv{
+        width: 100%;
+    }
+    .banner::before {
+        background: linear-gradient(to right, #313131 35%, transparent);
+    }
+}
 @media screen and (max-width: 768px) {
-    .prev-arrow, .next-arrow {
+    .quem-somos .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .quem-somos .container .adv{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .center{
+        width: 90%;
+    }
+    .container-relogio{
+        margin: 25px 0px;
+    }
+    .second .cards .card{
+        width: 100%;
+    }
+    .second .cards .card{
+        aspect-ratio: auto;
+    }
+    .second .cards .card .titulos .icon{
+        padding-top: 20px;
+    }
+    .second .cards .card .titulos p{
+        font-size: 100%;
+        padding-bottom: 20px;
+    }
+    .left{
+        width: 100%;
+        height: 80%;
+        padding-top: 0px;
+        align-items: center;
+    }
+    .left img{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .left .listas{
+        padding: 0px;
+    }
+    .left h1{
+        text-align: center;
+        font-size: 22px;
+    }
+    .banner{
+        background-position: 65% 0%;        
+        background-size: 390% 80%;
+        height: 100vh;
+    }
+    .quem-somos .container .adv h1{
+        font-size: 20px;
+    }
+    .hero{
+        margin-top: 70px;
+        height: 90vh;
+        justify-content: flex-end;
+    }
+    .cta{
+        padding: 17px 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 100%;
+    }
+    body{
+        padding: 0px;
+    }
+    .lista h3{
+        font-size: 14px;   
+    }
+    .hero p{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .prova-social .content h2{
+        font-size: 170%;
+        text-align: center;
+    }.prova-social .content .rating{
+        width: 25%;
+    }
+    .banner::before{
+        background: linear-gradient(to top,#181818  50%, transparent);
+    }
+    .second .sub{
+        width: 100%;
+        font-size: 100%;
+    }
+    .container-cards{
+        overflow-x: hidden;
+    }
+    .container-cards .avaliacao{
+        width: 30%;
+        margin-bottom: 30px;
+    }
+    .container-cards p{
+        margin-top: 30px;
+    }
+
+    .demora{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .demora .lado-direito{
+        width: 100%;
+        order: 1;
+    }
+    .demora .lado-esquerdo{
+        padding: 0;
+        width: 100%;
+        order: 2;
+    }
+    .demora .lado-esquerdo h1{
+        text-align: center;
+    }
+    .demora .lado-esquerdo span p{
+        line-height: 1;
+        text-align: center;
+    }
+    .demora .lado-esquerdo .lista i{
+        position: relative;
+         overflow: hidden;
+    }
+    .demora .lado-esquerdo .lista i::after {
+        content: "";
+        position: absolute;
+        bottom: -100%;    /* começa por baixo */
+        left: -50%;       /* começa à esquerda */
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.7) 50%,
+            rgba(255,255,255,0) 100%
+        );
+        transform: rotate(20deg);
+          -webkit-mask-image: text;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+        animation: shine 1.5s infinite;
+        }
+
+        /* Animação */
+        @keyframes shine {
+        0% {
+            left: -80%;
+            bottom: -120%;
+        }
+        60% {
+            left: 120%;
+            bottom: 0%;
+        }
+        100% {
+            left: 180%;
+            bottom: 100%;
+        }
+        }
+    .demora .lado-esquerdo p{
+        text-align: center;
+    }
+    .container-relogio p{
+        font-size: 100%;
+        width: 90%;
+    }
+    #titulos{
+        font-size: 1.7rem;
+    }
+    footer img{
+        width: 62%;
+    }
+    footer p{
+        font-size: 60%;
+    }
+    .demora .lado-esquerdo p, .hero p,.container-cards p, .second .sub, .quem-somos .t{
+        font-size: 1rem;
+    }
+    .second .cards{
+        width: 100%;
+    }
+    .footer{
+        padding: 0px 0px;
+    }
+    .demora .lado-esquerdo span {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .demora .lado-esquerdo .lista i {
+        border-radius: 50%;
+        border: 3px solid var(--laranja);
+        height: 50px;
+        width: 50px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+        .prev-arrow, .next-arrow {
         padding: 0;
     }
     .coverflow{
