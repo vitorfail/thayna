@@ -664,10 +664,12 @@ ease-in-out calc(var(--i) * 1s);
 .prev-arrow {
     left: 0%;
 }
+#prev-arrow, #next-arrow{
+  position: absolute;
+}
 .prev-arrow, .next-arrow {
     cursor: pointer;
     z-index: 20;
-    position: absolute;
     top: 50%;
     padding: 1.5rem 2rem;
     color: var(--laranja);
